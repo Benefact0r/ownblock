@@ -915,19 +915,24 @@ export default function HomePage() {
             </span>
           </div>
           <div className="flex flex-wrap items-center gap-3">
+            <a
+              href="/one-pager"
+              className="px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/15 font-semibold transition"
+            >
+              One-Pager
+            </a>
+            <a
+              href="/deck"
+              className="px-3 py-1 rounded-full bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 font-semibold transition"
+            >
+              7-Slide Pitch Deck
+            </a>
             <button
               onClick={() => pitchDialogRef.current?.showModal()}
-              className="px-3 py-1 rounded-full bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 font-semibold transition cursor-pointer"
-            >
-              Pitch Deck &amp; 1-Min Script
-            </button>
-            <a
-              href="#jury-guide"
-              onClick={() => setActiveView("marketplace")}
               className="text-slate-300 hover:text-white font-semibold underline underline-offset-4 cursor-pointer"
             >
-              Jury Architecture Guide →
-            </a>
+              1-Min Script
+            </button>
             <button
               onClick={() =>
                 setActiveView(
