@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@property --animation-reduced {
+  syntax: "*";
+  inherits: false;
+  initial-value: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: var(--animation-reduced) !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+dialog::backdrop {
+  background-color: rgba(11, 17, 32, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+@keyframes floatCard {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes flowBar {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.animate-float-card {
+  animation: floatCard 6s ease-in-out infinite;
+  --animation-reduced: none;
+}
+
+.animate-flow-bar {
+  animation: flowBar 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  --animation-reduced: none;
+}
+
+.shadow-lofty {
+  box-shadow: 0 18px 42px -12px rgba(15, 23, 42, 0.08),
+    0 4px 14px -4px rgba(15, 23, 42, 0.04);
+}
+
+.shadow-lofty-hover:hover {
+  box-shadow: 0 24px 52px -12px rgba(15, 23, 42, 0.14),
+    0 8px 20px -6px rgba(15, 23, 42, 0.06);
+}
