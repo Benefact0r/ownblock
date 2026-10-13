@@ -283,18 +283,31 @@ export default function DeckPage() {
     <div className="min-h-screen bg-[#0B1120] text-white flex flex-col justify-between p-4 sm:p-8">
       {/* Top Bar */}
       <div className="max-w-6xl w-full mx-auto flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-800">
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2.5">
           <Link
             href="/"
-            className="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-bold text-white transition"
+            className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-bold text-white transition"
           >
+            <img
+              src="/ownblock-logo.jpg"
+              alt="OwnBlock"
+              className="w-4 h-4 rounded object-cover"
+            />
             ← Back to Live App
           </Link>
+          <a
+            href="/ownblock-pitch-deck.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="px-3.5 py-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold transition shadow-sm"
+          >
+            ⬇ Download PDF Deck
+          </a>
           <Link
             href="/one-pager"
-            className="px-3.5 py-2 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/30 text-xs font-bold text-emerald-300 transition"
+            className="px-3.5 py-2 rounded-full bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/30 text-xs font-bold text-emerald-300 transition"
           >
-            View Printable One-Pager →
+            Printable One-Pager →
           </Link>
         </div>
 
