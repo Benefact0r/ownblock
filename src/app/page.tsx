@@ -964,38 +964,43 @@ export default function HomePage() {
               onClick={() => setActiveView("marketplace")}
               className="flex items-center gap-3 text-left cursor-pointer"
             >
-              <div className="w-11 h-11 rounded-2xl bg-[#0B1120] flex items-center justify-center shadow-sm border border-slate-800 overflow-hidden">
+              <div className="w-11 h-11 rounded-2xl bg-[#070C1A] flex items-center justify-center shadow-sm border border-slate-800 overflow-hidden">
                 <svg
                   viewBox="0 0 100 100"
                   className="w-8 h-8"
                   aria-hidden="true"
                 >
+                  {/* Roof */}
                   <polygon
-                    points="50,14 16,33 50,52 67,42 50,33 67,23"
-                    fill="#CBD5E1"
+                    points="50,10 12,32 12,48 50,26"
+                    fill="#6EE7B7"
                   />
                   <polygon
-                    points="16,33 50,52 50,88 16,69"
-                    fill="#6366F1"
+                    points="50,10 88,32 88,48 50,26"
+                    fill="#10B981"
+                  />
+                  {/* Central Owned Block */}
+                  <polygon
+                    points="50,33 33,43 50,53 67,43"
+                    fill="#ECFDF5"
                   />
                   <polygon
-                    points="50,52 67,42 67,61 84,52 84,69 50,88"
-                    fill="#4338CA"
+                    points="33,43 50,53 50,72 33,62"
+                    fill="#34D399"
                   />
-                  <g transform="translate(5,-6)">
-                    <polygon
-                      points="67,23 50,33 67,42 84,33"
-                      fill="#6EE7B7"
-                    />
-                    <polygon
-                      points="50,33 67,42 67,61 50,52"
-                      fill="#10B981"
-                    />
-                    <polygon
-                      points="67,42 84,33 84,52 67,61"
-                      fill="#059669"
-                    />
-                  </g>
+                  <polygon
+                    points="50,53 67,43 67,62 50,72"
+                    fill="#059669"
+                  />
+                  {/* Lower Escrow Vault */}
+                  <polygon
+                    points="16,56 29,48 29,71 50,83 50,96 16,76"
+                    fill="#818CF8"
+                  />
+                  <polygon
+                    points="84,56 71,48 71,71 50,83 50,96 84,76"
+                    fill="#4F46E5"
+                  />
                 </svg>
               </div>
               <div>
