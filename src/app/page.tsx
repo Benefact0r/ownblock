@@ -955,78 +955,37 @@ export default function HomePage() {
         </div>
       )}
 
-      {/* 2. STICKY HEADER */}
-      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-          {/* Brand Logo */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setActiveView("marketplace")}
-              className="flex items-center gap-3 text-left cursor-pointer"
-            >
-              <div className="w-11 h-11 rounded-2xl bg-[#070C1A] flex items-center justify-center shadow-sm border border-slate-800 overflow-hidden">
-                <svg
-                  viewBox="0 0 100 100"
-                  className="w-8 h-8"
-                  aria-hidden="true"
-                >
-                  {/* Roof */}
-                  <polygon
-                    points="50,10 12,32 12,48 50,26"
-                    fill="#6EE7B7"
-                  />
-                  <polygon
-                    points="50,10 88,32 88,48 50,26"
-                    fill="#10B981"
-                  />
-                  {/* Central Owned Block */}
-                  <polygon
-                    points="50,33 33,43 50,53 67,43"
-                    fill="#ECFDF5"
-                  />
-                  <polygon
-                    points="33,43 50,53 50,72 33,62"
-                    fill="#34D399"
-                  />
-                  <polygon
-                    points="50,53 67,43 67,62 50,72"
-                    fill="#059669"
-                  />
-                  {/* Lower Escrow Vault */}
-                  <polygon
-                    points="16,56 29,48 29,71 50,83 50,96 16,76"
-                    fill="#818CF8"
-                  />
-                  <polygon
-                    points="84,56 71,48 71,71 50,83 50,96 84,76"
-                    fill="#4F46E5"
-                  />
-                </svg>
-              </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="font-bold text-xl tracking-tight text-[#0F172A]">
-                    OwnBlock
-                  </span>
-                  <span className="text-[11px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 border border-slate-200">
-                    Solana RWA
-                  </span>
-                </div>
-                <p className="text-xs text-slate-500">
-                  Real Estate &amp; Business Equity Co-Ownership
-                </p>
-              </div>
-            </button>
-          </div>
+      {/* 2. STICKY ARCHITECTURAL HEADER (SINGLE-LINE, ZERO WRAPPING) */}
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-slate-200/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+          {/* Left Zone: Studio 3D Brand Mark + Clean Single-Line Lockup */}
+          <button
+            onClick={() => setActiveView("marketplace")}
+            className="flex items-center gap-3 shrink-0 cursor-pointer group"
+          >
+            <img
+              src="/ownblock-logo.jpg"
+              alt="OwnBlock Logo"
+              className="w-10 h-10 rounded-xl object-cover shadow-sm ring-1 ring-slate-900/10 group-hover:scale-105 transition-transform"
+            />
+            <div className="flex items-center gap-2 whitespace-nowrap">
+              <span className="font-extrabold text-[19px] tracking-tight text-[#0F172A]">
+                OwnBlock
+              </span>
+              <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200/80">
+                Solana RWA
+              </span>
+            </div>
+          </button>
 
-          {/* Center Navigation Links */}
-          <nav className="hidden xl:flex items-center gap-6 text-sm font-medium text-slate-600">
+          {/* Center Zone: Segmented Pill Navigation Track (Never Wraps) */}
+          <nav className="hidden lg:flex items-center gap-1 p-1 rounded-full bg-slate-100/90 border border-slate-200/80 whitespace-nowrap shrink-0">
             <button
               onClick={() => setActiveView("marketplace")}
-              className={`transition cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition cursor-pointer ${
                 activeView === "marketplace"
-                  ? "text-[#0F172A] font-bold"
-                  : "hover:text-[#0F172A]"
+                  ? "bg-white text-[#0F172A] shadow-2xs font-bold"
+                  : "text-slate-600 hover:text-[#0F172A]"
               }`}
             >
               Marketplace
@@ -1034,49 +993,69 @@ export default function HomePage() {
             <a
               href="#business-equity"
               onClick={() => setActiveView("marketplace")}
-              className="hover:text-[#0F172A] transition"
+              className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-600 hover:text-[#0F172A] transition"
             >
-              Business Shares
+              Business Equity
             </a>
             <a
               href="#simulator"
               onClick={() => setActiveView("marketplace")}
-              className="hover:text-[#0F172A] transition"
+              className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-600 hover:text-[#0F172A] transition"
             >
-              Live Deal Simulator
+              Simulator
             </a>
             <a
               href="#housd-banner"
               onClick={() => setActiveView("marketplace")}
-              className="hover:text-[#0F172A] transition"
+              className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-600 hover:text-[#0F172A] transition"
             >
-              Housd Financing
+              Housd Pool
             </a>
             <button
               onClick={() => setActiveView("admin")}
               className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
                 activeView === "admin"
-                  ? "bg-indigo-600 text-white shadow-sm"
-                  : "bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200"
+                  ? "bg-indigo-600 text-white shadow-2xs"
+                  : "text-indigo-700 hover:bg-indigo-50/80"
               }`}
             >
-              <span className="w-2 h-2 rounded-full bg-indigo-500 animate-ping" />
-              Admin Panel ({users.length} Users)
+              <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
+              Admin ({users.length})
             </button>
           </nav>
 
-          {/* Right Controls: List Asset + Real Phantom/Solflare Connect + Demo Wallet */}
-          <div className="flex items-center gap-2.5">
+          {/* Right Zone: Unified Persona Capsule + Single Primary Action */}
+          <div className="flex items-center gap-2.5 shrink-0 whitespace-nowrap">
+            {/* Unified Demo Persona & Balance Capsule */}
+            <div className="hidden sm:flex items-center gap-2 bg-slate-100/90 border border-slate-200/80 rounded-full pl-3 pr-1.5 py-1">
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700">
+                <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                ${activeWallet.usdcBalance.toLocaleString()}
+              </span>
+              <select
+                aria-label="Select active demo wallet"
+                value={activeWalletId}
+                onChange={(e) => setActiveWalletId(e.target.value)}
+                className="bg-white text-[#0F172A] text-xs font-semibold rounded-full px-2.5 py-1 border border-slate-200/90 focus:outline-none cursor-pointer"
+              >
+                {wallets.map((w) => (
+                  <option key={w.id} value={w.id}>
+                    {w.label.split(" (")[0]}
+                  </option>
+                ))}
+              </select>
+            </div>
+
             <button
               onClick={() => listAssetDialogRef.current?.showModal()}
-              className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-xs font-semibold text-[#0F172A] transition cursor-pointer"
+              className="hidden md:inline-flex items-center px-3.5 py-2 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-[#0F172A] transition cursor-pointer"
             >
               + List Asset
             </button>
 
             <button
               onClick={handleConnectBrowserWallet}
-              className={`px-3.5 py-2 rounded-xl text-xs font-bold transition cursor-pointer ${
+              className={`px-4 py-2 rounded-full text-xs font-bold transition cursor-pointer shadow-2xs ${
                 connectedPubkey
                   ? "bg-emerald-600 text-white"
                   : "bg-[#0B1120] hover:bg-slate-800 text-white"
@@ -1084,32 +1063,9 @@ export default function HomePage() {
               title="Connect Phantom or Solflare wallet on Solana Devnet"
             >
               {connectedPubkey
-                ? `✓ ${connectedPubkey.slice(0, 4)}..${connectedPubkey.slice(-4)} (${connectedSolBalance} SOL)`
+                ? `✓ ${connectedPubkey.slice(0, 4)}..${connectedPubkey.slice(-4)}`
                 : "Connect Wallet"}
             </button>
-
-            <div className="flex items-center bg-slate-100 rounded-xl px-2.5 py-1.5 border border-slate-200">
-              <div className="mr-2 text-right hidden sm:block">
-                <div className="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">
-                  Active Role
-                </div>
-                <div className="text-xs font-bold text-emerald-700">
-                  ${activeWallet.usdcBalance.toLocaleString()} USDC
-                </div>
-              </div>
-              <select
-                aria-label="Select active demo wallet"
-                value={activeWalletId}
-                onChange={(e) => setActiveWalletId(e.target.value)}
-                className="bg-white text-[#0F172A] text-xs font-semibold rounded-lg px-2 py-1.5 border border-slate-200 focus:outline-none cursor-pointer"
-              >
-                {wallets.map((w) => (
-                  <option key={w.id} value={w.id}>
-                    {w.label}
-                  </option>
-                ))}
-              </select>
-            </div>
           </div>
         </div>
       </header>
@@ -1547,31 +1503,31 @@ export default function HomePage() {
            ===================================================================== */
         <>
           {/* 3. HERO SECTION */}
-          <section className="relative pt-10 pb-20 overflow-hidden border-b border-slate-200 bg-gradient-to-b from-white to-[#F8FAFC]">
+          <section className="relative pt-14 pb-20 overflow-hidden border-b border-slate-200/80 bg-gradient-to-b from-white via-white to-[#F8FAFC]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid lg:grid-cols-12 gap-12 items-center">
                 <div className="lg:col-span-7 space-y-6">
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-200 text-xs font-semibold text-indigo-900">
-                    <span className="w-2 h-2 rounded-full bg-indigo-600" />
+                  <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-100/90 border border-slate-200/90 text-xs font-semibold text-slate-700">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
                     Caucasus RWA Protocol · Real Estate &amp; Operating
                     Businesses
                   </div>
 
-                  <h1 className="font-serif text-4xl sm:text-5xl lg:text-[54px] font-semibold leading-[1.08] tracking-tight text-[#0F172A]">
+                  <h1 className="font-serif text-4xl sm:text-5xl lg:text-[52px] font-semibold leading-[1.1] tracking-tight text-[#0F172A]">
                     Co-own prime properties{" "}
-                    <span className="italic font-normal text-emerald-700">
+                    <span className="italic font-normal bg-gradient-to-r from-emerald-700 to-teal-600 bg-clip-text text-transparent">
                       &amp; profitable businesses
                     </span>{" "}
                     with crypto.
                   </h1>
 
-                  <p className="text-lg text-slate-600 leading-relaxed max-w-2xl">
+                  <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
                     Have 10% of an apartment&apos;s price or want to buy a{" "}
-                    <strong className="text-[#0F172A]">
+                    <strong className="font-semibold text-[#0F172A]">
                       fractional equity stake in a profitable local business
                     </strong>
                     ? Pool USDC on Solana, finance up to 70% via the{" "}
-                    <strong className="text-indigo-700">
+                    <strong className="font-semibold text-indigo-700">
                       Housd Credit Pool
                     </strong>
                     , and release funds only after the SPV LLC contract is
@@ -1579,30 +1535,30 @@ export default function HomePage() {
                     Notary.
                   </p>
 
-                  <div className="flex flex-wrap items-center gap-4 pt-2">
+                  <div className="flex flex-wrap items-center gap-3.5 pt-2">
                     <a
                       href="#marketplace"
-                      className="px-6 py-3.5 rounded-xl bg-[#0B1120] hover:bg-slate-800 text-white font-semibold text-sm shadow-sm transition"
+                      className="px-6 py-3.5 rounded-full bg-[#0B1120] hover:bg-slate-800 text-white font-semibold text-sm shadow-sm transition whitespace-nowrap"
                     >
-                      Explore Properties &amp; Businesses
+                      Explore Marketplace
                     </a>
                     <a
                       href="#simulator"
-                      className="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-sm transition"
+                      className="px-6 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-sm transition whitespace-nowrap"
                     >
-                      Launch Live Escrow Simulator
+                      Live Escrow Simulator
                     </a>
                     <button
                       onClick={() => setActiveView("admin")}
-                      className="px-5 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-[#0F172A] font-semibold text-sm border border-slate-200 transition cursor-pointer"
+                      className="px-5 py-3.5 rounded-full bg-white hover:bg-slate-50 text-[#0F172A] font-semibold text-sm border border-slate-200 transition cursor-pointer whitespace-nowrap"
                     >
-                      Inspect Admin Panel →
+                      Admin KYB Console →
                     </button>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200">
+                  <div className="grid grid-cols-3 gap-6 pt-6 border-t border-slate-200/80">
                     <div>
-                      <div className="text-2xl font-bold text-[#0F172A]">
+                      <div className="text-2xl font-extrabold tracking-tight text-[#0F172A]">
                         $100 USDC
                       </div>
                       <div className="text-xs text-slate-500 mt-0.5">
@@ -1610,7 +1566,7 @@ export default function HomePage() {
                       </div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-emerald-600">
+                      <div className="text-2xl font-extrabold tracking-tight text-emerald-600">
                         11.4% – 19.5%
                       </div>
                       <div className="text-xs text-slate-500 mt-0.5">
@@ -1618,7 +1574,7 @@ export default function HomePage() {
                       </div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-indigo-600">
+                      <div className="text-2xl font-extrabold tracking-tight text-indigo-600">
                         30% / 70%
                       </div>
                       <div className="text-xs text-slate-500 mt-0.5">
@@ -3199,9 +3155,11 @@ export default function HomePage() {
       <footer className="bg-[#0B1120] text-slate-400 py-10 border-t border-slate-800 text-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-emerald-600 text-white font-serif font-bold flex items-center justify-center">
-              OB
-            </div>
+            <img
+              src="/ownblock-logo.jpg"
+              alt="OwnBlock"
+              className="w-8 h-8 rounded-lg object-cover ring-1 ring-white/15"
+            />
             <span className="text-white font-semibold">
               OwnBlock Protocol — Built on Solana for the Colosseum Hackathon
             </span>

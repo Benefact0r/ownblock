@@ -35,9 +35,11 @@ export default function OnePagerPage() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-5">
           <div className="flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-2xl bg-[#0B1120] text-white flex items-center justify-center font-serif font-bold text-2xl">
-              OB
-            </div>
+            <img
+              src="/ownblock-logo.jpg"
+              alt="OwnBlock Logo"
+              className="w-12 h-12 rounded-2xl object-cover shadow-sm ring-1 ring-slate-900/10"
+            />
             <div>
               <div className="flex items-center gap-2">
                 <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#0F172A]">
