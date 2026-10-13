@@ -964,8 +964,39 @@ export default function HomePage() {
               onClick={() => setActiveView("marketplace")}
               className="flex items-center gap-3 text-left cursor-pointer"
             >
-              <div className="w-11 h-11 rounded-2xl bg-[#0B1120] text-white flex items-center justify-center font-serif font-bold text-xl shadow-sm border border-slate-800">
-                OB
+              <div className="w-11 h-11 rounded-2xl bg-[#0B1120] flex items-center justify-center shadow-sm border border-slate-800 overflow-hidden">
+                <svg
+                  viewBox="0 0 100 100"
+                  className="w-8 h-8"
+                  aria-hidden="true"
+                >
+                  <polygon
+                    points="50,14 16,33 50,52 67,42 50,33 67,23"
+                    fill="#CBD5E1"
+                  />
+                  <polygon
+                    points="16,33 50,52 50,88 16,69"
+                    fill="#6366F1"
+                  />
+                  <polygon
+                    points="50,52 67,42 67,61 84,52 84,69 50,88"
+                    fill="#4338CA"
+                  />
+                  <g transform="translate(5,-6)">
+                    <polygon
+                      points="67,23 50,33 67,42 84,33"
+                      fill="#6EE7B7"
+                    />
+                    <polygon
+                      points="50,33 67,42 67,61 50,52"
+                      fill="#10B981"
+                    />
+                    <polygon
+                      points="67,42 84,33 84,52 67,61"
+                      fill="#059669"
+                    />
+                  </g>
+                </svg>
               </div>
               <div>
                 <div className="flex items-center gap-2">
